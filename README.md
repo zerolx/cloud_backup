@@ -1,2 +1,2 @@
 # cloud_backup
-minimalistic shell script to make cloud backup automatically
+minimalistic bash script to make cloud backup automatically
