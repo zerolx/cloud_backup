@@ -1,7 +1,7 @@
 from crontab import CronTab
 import os
 from adapter.drive import Drive
-import getpass,platform
+import getpass,platform, time
 
 
 
@@ -26,4 +26,4 @@ class Syncronize:
         for filename in os.listdir(backup_dir):
             if not filename.startswith("."):
                 full_path = os.path.join(backup_dir, filename)
-                drive.send_file(full_path, "{}_{}".format(getpass.getuser(),platform.node()))
+                drive.send_file(full_path, "{}_{}_{}".format(getpass.getuser(),platform.node(), str(time.time())))
