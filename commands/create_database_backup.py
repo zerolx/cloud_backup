@@ -26,7 +26,7 @@ class CreateDatabaseBackup:
     def create_cron(self,command):
         cron = CronTab(user=True)
         job = cron.new(command=command)
-        # job.every().day()
+        job.every().day()
         print(job)
         cron.write()
         Syncronize().setup()

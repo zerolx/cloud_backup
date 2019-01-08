@@ -14,7 +14,7 @@ class CreateBackup:
             source = raw_input("Source Directory to backup: ")
 
         job = cron.new(command="tar zcvf '{}' '{}'".format(os.path.join(dest, source.split(os.path.sep)[-1]+".tar.gz"), source))
-        # job.every().day()
+        job.every().day()
         print(job)
         cron.write()
         Syncronize().setup()
