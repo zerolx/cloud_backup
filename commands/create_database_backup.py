@@ -18,7 +18,7 @@ class CreateDatabaseBackup:
 
         pname = pname.lower().strip()
         if pname == "mysql":
-            self.create_cron("mysqldump -u{} -p{} {} > {}".format(user, passwd, dbname, os.path.join(dest, dbname+".sql")))
+            self.create_cron("mysqldump -u'{}' -p'{}' '{}' > '{}'".format(user, passwd, dbname, os.path.join(dest, dbname+".sql")))
         else:
             print("DATABASE {} NOT SUPPORTED YET!".format(pname))
         # "tar zcvf {} {}".format(os.path.join(dest, source.split(os.path.sep)[-1]+".tar.gz"), source)
